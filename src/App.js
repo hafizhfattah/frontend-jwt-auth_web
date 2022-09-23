@@ -1,24 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
+import Login from "./components/Login";
+import Navbar from "./components/Navbar";
+import Register from "./components/Register";
+import ProductList from "./components/products/ProductList";
+import ProductAdd from "./components/products/ProductAdd";
+import ProductEdit from "./components/products/ProductEdit";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <Login/>
+          </Route>
+          <Route path="/register">
+            <Register/>
+          </Route>
+          <Route path="/dashboard">
+            <Navbar/>
+            <Dashboard/>
+          </Route>
+          <Route path="/product">
+            <Navbar/>
+            <div className="container">
+              <div className="columns">
+                <div className="column">
+                  <ProductList />
+                </div>
+              </div>
+            </div>
+          </Route>
+          <Route path="/products/add">
+            <Navbar/>
+            <div className="container">
+              <div className="columns">
+                <div className="column">
+                  <ProductAdd/>
+                </div>
+              </div>
+            </div>
+          </Route>
+          <Route path="/products/edit/:id">
+            <Navbar/>
+            <div className="container">
+              <div className="columns">
+                <div className="column">
+                  <ProductEdit/>
+                </div>
+              </div>
+            </div>
+          </Route>      
+        </Switch>
+      </BrowserRouter>
   );
 }
 
