@@ -14,7 +14,7 @@ const Dashboard = () => {
   useEffect(() => {
     refreshToken();
     // getUsers();
-  }, []);
+  });
 
   const refreshToken = async () => {
     try {
