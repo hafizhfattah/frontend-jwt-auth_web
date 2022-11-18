@@ -4,7 +4,7 @@ This JWT Auth Web for Frontend Section. Made With MySQL, Express, ReactJS, NodeJ
 
 ### 🚀 **Getting Started**
 1. Clone this project || Download Zip from GitHub
-2. Run the project 
+2. Run the Project 
 
 ### 🎖  **Installing**
 ```
